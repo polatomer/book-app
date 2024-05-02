@@ -18,8 +18,9 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.list)),
-        actions: const [CircleAvatar()],
+        leading: IconButton(
+            onPressed: () {}, icon: Image.asset('assets/png/ic_menu.png')),
+        actions: [Image.asset('assets/png/ic_avatar.png')],
       ),
       body: Padding(
         padding: context.padding.horizontalNormal,
@@ -45,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 Padding(
-                  padding: context.padding.onlyTopNormal,
+                  padding: context.padding.onlyTopMedium,
                   child: SizedBox(
                       height: context.sized.dynamicHeight(.05),
                       child: const CategoriesListView()),
@@ -119,6 +120,8 @@ class _FilterContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: context.sized.dynamicHeight(0.075),
+      width: context.sized.dynamicWidth(.15),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: ColorConstant.choppedChive),
@@ -139,8 +142,11 @@ class _FilterButton extends StatelessWidget {
 
   SizedBox _filterButtonBox(BuildContext context) {
     return SizedBox(
-        height: context.sized.dynamicHeight(.06),
-        child: Image.asset('assets/png/ic_filter.png'));
+        height: context.sized.dynamicHeight(.035),
+        child: Image.asset(
+          'assets/png/ic_filter.png',
+          color: Colors.white,
+        ));
   }
 }
 

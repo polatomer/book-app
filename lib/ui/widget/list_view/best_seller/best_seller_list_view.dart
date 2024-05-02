@@ -1,4 +1,5 @@
 import 'package:e_course_ui/ui/constant/color_constant.dart';
+import 'package:e_course_ui/ui/widget/list_view/best_seller/best_seller_list.dart';
 import 'package:e_course_ui/ui/widget/list_view/best_seller/best_seller_model.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
@@ -11,28 +12,12 @@ class BestSellerListView extends StatefulWidget {
 }
 
 class _BestSellerListViewState extends State<BestSellerListView> {
-  final List<BestSellerModel> _items = [
-    BestSellerModel(
-        author: 'By Micjael L. Stickler',
-        imageName: 'assets/png/ic_book_whitout_reservation.png',
-        title: 'Life Without...',
-        price: r'$20.00'),
-    BestSellerModel(
-        author: 'By Lindsay Eager',
-        imageName: 'assets/png/ic_book_patron_thief.png',
-        title: 'The Patron...',
-        price: r'$30.00'),
-    BestSellerModel(
-        author: 'By Micjael L. Stickler',
-        imageName: 'assets/png/ic_book_whitout_reservation.png',
-        title: 'Life Without...',
-        price: r'$20.00'),
-    BestSellerModel(
-        author: 'By Lindsay Eager',
-        imageName: 'assets/png/ic_book_patron_thief.png',
-        title: 'The Patron...',
-        price: r'$30.00'),
-  ];
+  late final List _items;
+  @override
+  void initState() {
+    super.initState();
+    _items = BestSellerList().items;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,28 +29,67 @@ class _BestSellerListViewState extends State<BestSellerListView> {
         return Padding(
           padding: context.padding.onlyTopLow,
           child: SizedBox(
-            height: context.sized.dynamicHeight(0.18),
-            child: Card(
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5))),
-              color: ColorConstant.luminary,
-              child: Row(
-                children: [
-                  Image.asset(_items[index].imageName ?? ''),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(_items[index].title ?? ''),
-                      Text(_items[index].author ?? ''),
-                      Text(_items[index].price ?? ''),
-                    ],
-                  )
-                ],
-              ),
-            ),
+            height: context.sized.dynamicHeight(0.15),
+            child: _ListCard(model: _items[index]),
           ),
         );
       },
+    );
+  }
+}
+
+class _ListCard extends StatelessWidget {
+  const _ListCard({
+    super.key,
+    required BestSellerModel model,
+  }) : _model = model;
+
+  final BestSellerModel _model;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(5))),
+      color: ColorConstant.luminary,
+      child: Row(
+        children: [
+          Padding(
+            padding: context.padding.onlyLeftNormal,
+            child: Image.asset(_model.imageName ?? ''),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _title(context),
+              _authorText(context),
+              _priceText(context),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Text _authorText(BuildContext context) {
+    return Text(
+      _model.author ?? '',
+    );
+  }
+
+  Text _title(BuildContext context) {
+    return Text(
+      _model.title ?? '',
+      style: context.general.textTheme.titleMedium,
+    );
+  }
+
+  Text _priceText(BuildContext context) {
+    return Text(
+      _model.price ?? '',
+      style: context.general.textTheme.titleLarge
+          ?.copyWith(fontWeight: FontWeight.w700),
     );
   }
 }
