@@ -14,6 +14,15 @@ class StringConstant {
   static const String secondBookPrice = r'$30.00';
   static const String firstBookTitle = 'Life Without..';
   static const String secondBookTitle = 'The Patron..';
+  static const String startFirstTitle = 'Your Personal Library';
+  static const String startSecondTitle = 'Companion';
+  static const String startSubtitle =
+      'Lorem ipsum dolor sit amet, consectetuelit, sed do';
+  static const String startSecondSubtitle =
+      'eiusmod tempor incididun incididun';
+
+  static const String startButton = 'Get Started';
+
   static const String menuIcon = 'assets/png/ic_menu.png';
   static const String avatar = 'assets/png/ic_avatar.png';
   static const String filterIcon = 'assets/png/ic_filter.png';

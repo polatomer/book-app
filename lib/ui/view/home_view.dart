@@ -1,5 +1,7 @@
 import 'package:e_course_ui/ui/constant/color_constant.dart';
+import 'package:e_course_ui/ui/constant/image_enum.dart';
 import 'package:e_course_ui/ui/constant/string_constant.dart';
+import 'package:e_course_ui/ui/extension/png_extension.dart';
 import 'package:e_course_ui/ui/widget/lvb/best_seller/best_seller_list_view.dart';
 import 'package:e_course_ui/ui/widget/lvb/book_list/book_list_view.dart';
 import 'package:e_course_ui/ui/widget/lvb/categories/categories_list_view.dart';
@@ -19,8 +21,8 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {}, icon: Image.asset('assets/png/ic_menu.png')),
-        actions: [Image.asset('assets/png/ic_avatar.png')],
+            onPressed: () {}, icon: PngImage(name: ImageEnum.menu.name)),
+        actions: [PngImage(name: ImageEnum.avatar.name)],
       ),
       body: Padding(
         padding: context.padding.horizontalNormal,
@@ -143,8 +145,8 @@ class _FilterButton extends StatelessWidget {
   SizedBox _filterButtonBox(BuildContext context) {
     return SizedBox(
         height: context.sized.dynamicHeight(.035),
-        child: Image.asset(
-          'assets/png/ic_filter.png',
+        child: PngImage(
+          name: ImageEnum.filter.name,
           color: Colors.white,
         ));
   }

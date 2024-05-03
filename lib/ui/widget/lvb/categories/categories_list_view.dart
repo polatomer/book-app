@@ -51,6 +51,11 @@ class _CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            elevation: 0,
+            shape: const StadiumBorder(),
+            backgroundColor: Colors.transparent,
+            side: BorderSide(color: Colors.grey.withOpacity(.4))),
         onPressed: onPressed,
         child: Text(
           _model.title ?? '',
