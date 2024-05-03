@@ -1,5 +1,5 @@
 import 'package:e_course_ui/ui/constant/string_constant.dart';
-import 'package:e_course_ui/ui/widget/list_view/best_seller/best_seller_model.dart';
+import 'package:e_course_ui/ui/widget/lvb/best_seller/best_seller_model.dart';
 
 class BestSellerList {
   final List<BestSellerModel> items = [

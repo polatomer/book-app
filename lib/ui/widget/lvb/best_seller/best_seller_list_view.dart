@@ -1,6 +1,6 @@
 import 'package:e_course_ui/ui/constant/color_constant.dart';
-import 'package:e_course_ui/ui/widget/list_view/best_seller/best_seller_list.dart';
-import 'package:e_course_ui/ui/widget/list_view/best_seller/best_seller_model.dart';
+import 'package:e_course_ui/ui/widget/lvb/best_seller/best_seller_list.dart';
+import 'package:e_course_ui/ui/widget/lvb/best_seller/best_seller_model.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
@@ -89,7 +89,7 @@ class _ListCard extends StatelessWidget {
     return Text(
       _model.price ?? '',
       style: context.general.textTheme.titleLarge
-          ?.copyWith(fontWeight: FontWeight.w700),
+          ?.copyWith(fontWeight: FontWeight.w800),
     );
   }
 }

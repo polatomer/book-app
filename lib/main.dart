@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Book-Store',
       home: const HomeView(),
-      theme: LightTheme().lightTheme,
+      theme: bookStoreTheme,
     );
   }
 }

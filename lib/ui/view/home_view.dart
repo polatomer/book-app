@@ -1,8 +1,8 @@
 import 'package:e_course_ui/ui/constant/color_constant.dart';
 import 'package:e_course_ui/ui/constant/string_constant.dart';
-import 'package:e_course_ui/ui/widget/list_view/best_seller/best_seller_list_view.dart';
-import 'package:e_course_ui/ui/widget/list_view/book_list/book_list_view.dart';
-import 'package:e_course_ui/ui/widget/list_view/categories/categories_list_view.dart';
+import 'package:e_course_ui/ui/widget/lvb/best_seller/best_seller_list_view.dart';
+import 'package:e_course_ui/ui/widget/lvb/book_list/book_list_view.dart';
+import 'package:e_course_ui/ui/widget/lvb/categories/categories_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 

@@ -1,5 +1,5 @@
 import 'package:e_course_ui/ui/constant/string_constant.dart';
-import 'package:e_course_ui/ui/widget/list_view/book_list/book_list_model.dart';
+import 'package:e_course_ui/ui/widget/lvb/book_list/book_list_model.dart';
 
 class BookModelList {
   final List<BookModel> items = [

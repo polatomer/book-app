@@ -1,6 +1,6 @@
 import 'package:e_course_ui/ui/constant/color_constant.dart';
-import 'package:e_course_ui/ui/widget/list_view/book_list/book_list_model.dart';
-import 'package:e_course_ui/ui/widget/list_view/book_list/book_model_list.dart';
+import 'package:e_course_ui/ui/widget/lvb/book_list/book_list_model.dart';
+import 'package:e_course_ui/ui/widget/lvb/book_list/book_model_list.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
@@ -68,7 +68,8 @@ class _ListCard extends StatelessWidget {
   Text _title(BuildContext context) {
     return Text(
       _model.title ?? '',
-      style: context.general.textTheme.headlineSmall,
+      style: context.general.textTheme.headlineSmall
+          ?.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
@@ -76,7 +77,7 @@ class _ListCard extends StatelessWidget {
     return Text(
       _model.price ?? '',
       style: context.general.textTheme.headlineSmall
-          ?.copyWith(fontWeight: FontWeight.w600),
+          ?.copyWith(fontWeight: FontWeight.w700),
     );
   }
 }

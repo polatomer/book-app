@@ -1,5 +1,5 @@
 import 'package:e_course_ui/ui/constant/categories_enum.dart';
-import 'package:e_course_ui/ui/widget/list_view/categories/category_model.dart';
+import 'package:e_course_ui/ui/widget/lvb/categories/category_model.dart';
 
 class CategoryList {
   final List<CategoryModel> items = [
