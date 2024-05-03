@@ -29,7 +29,8 @@ class _BookListViewState extends State<BookListView> {
           padding: context.padding.onlyLeftLow,
           child: SizedBox(
             width: context.sized.dynamicWidth(0.6),
-            child: _ListCard(model: _items[index]),
+            child:
+                InkWell(onTap: () {}, child: _ListCard(model: _items[index])),
           ),
         );
       },

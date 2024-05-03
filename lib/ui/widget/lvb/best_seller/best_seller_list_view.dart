@@ -30,7 +30,8 @@ class _BestSellerListViewState extends State<BestSellerListView> {
           padding: context.padding.onlyTopLow,
           child: SizedBox(
             height: context.sized.dynamicHeight(0.15),
-            child: _ListCard(model: _items[index]),
+            child:
+                InkWell(onTap: () {}, child: _ListCard(model: _items[index])),
           ),
         );
       },
